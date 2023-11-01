@@ -20,7 +20,9 @@ abstract class OniElement<TAttributes> extends HTMLElement {
     }
   }
 
-  constructor(public attrs: string[]) {
+  constructor(public attrs: string[], lifeCyclers?: {
+
+  }) {
     super();
     (attrs || []).forEach(attr => {
       const subject = new Subject();
@@ -56,9 +58,7 @@ abstract class OniElement<TAttributes> extends HTMLElement {
 
   adoptedCallback() {
     this.oniAdoptedCallback();
-  }
-
-  // abstract oniAttributeChangedCallback(name: string, oldValue: any, newValue: any): void;
+  }  
 
   attributeChangedCallback(name: string, oldValue: any, newValue: any) {
     if (oldValue != newValue) {

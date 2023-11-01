@@ -1,0 +1,12 @@
+#app {
+  padding: 4rem;
+  display: grid;
+  align-items: center;
+}
+
+oni-button {
+  padding: 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: center;
+}
